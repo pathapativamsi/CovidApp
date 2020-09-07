@@ -15,13 +15,7 @@ weatherForm.addEventListener('submit', (e) => {
     messageOne.textContent = 'Loading...'
     messageTwo.textContent = ''
 
-    fetch("https://covid-193.p.rapidapi.com/statistics", {
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-host": "covid-193.p.rapidapi.com",
-            "x-rapidapi-key": "d35984a55emsh71bbcd20cf6658dp10af3bjsn4317d86e369d"
-        }
-    }).then((response)=>{
+    fetch("/weather").then((response)=>{
         
         individualdata = response.filter((item)=>{
             return item.country == location
